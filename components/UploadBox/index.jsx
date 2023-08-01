@@ -34,11 +34,17 @@ const UploadBox = ({handleFileSelected}) => {
         inputRef.current.click()
     }
 
+    const [hover, setHover] = useState(0)
 
     return (
-        <s.FormFileUpload onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
+        <s.FormFileUpload 
+            onMouseEnter={() => setHover(1)} 
+            onMouseLeave={() => setHover(0)} 
+            onDragEnter={handleDrag} 
+            onSubmit={(e) => e.preventDefault()
+        }>
             <s.InputFileUpload ref={inputRef} onChange={handleChange} type="file" id="upload" />
-            <s.LabelFileUpload htmlFor="upload" className={dragActive ? "drag-active" : ""}>
+            <s.LabelFileUpload hashover={hover} htmlFor="upload" className={dragActive ? "drag-active" : ""}>
                 <div>
                     <p>Drag and drop your file here or </p>
                     <s.UploadButton onClick={onButtonClick}>Upload a file</s.UploadButton>

@@ -1,6 +1,7 @@
 import * as s from "./styles"
 import { useEffect, useState } from "react"
 import UploadBox from "../../components/UploadBox"
+import SearchIcon from '@mui/icons-material/Search';
 
 const Home = () => {
     const [onSearch, setOnSearch] = useState()
@@ -34,8 +35,8 @@ const Home = () => {
                 <s.Title>ANIMEFIeND🔍</s.Title>
                 {picture && (
                     <s.PicturePreview background={picture}>
-                        <s.Overlay onMouseEnter={() => setOnSearch(true)} onMouseLeave={() => setOnSearch(false)}>
-                            <s.SearchButton visible={onSearch} />
+                        <s.Overlay onMouseEnter={() => setOnSearch(1)} onMouseLeave={() => setOnSearch(0)}>
+                            <s.SearchButton visible={onSearch}><SearchIcon fontSize="large"/></s.SearchButton>
                         </s.Overlay>
                     </s.PicturePreview>)}
                 <UploadBox handleFileSelected={handleFileSelected}/>
