@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     body {
-        background-color: #222222;
+        background-color: #020202;
     }
 `
 
