@@ -55,23 +55,23 @@ const ListResult = ({data}) => {
 
     return (
         <>
-            <ListResultContainer onClick={() => setOpen(!open)}>
+            <ListResultContainer expand={open} onClick={() => setOpen(!open)}>
                 {data.anilist.title.romaji}
+                {open && (<AnimeContainer>
+                    <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">
+                        <ImgContainer src={mediaCover}/>
+                    </a>
+                    <StatsContainer>
+                    Similarity: {(data.similarity * 100).toFixed(1)}%
+                        <VideoContainer>
+                            <FrameVideo autoPlay={true} muted loop controls>
+                                <source src={data.video} type="video/mp4"/>
+                            </FrameVideo>
+                        </VideoContainer>
+                    Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}
+                    </StatsContainer>
+                </AnimeContainer>)}
             </ListResultContainer>
-            {open && (<AnimeContainer>
-                <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">
-                    <ImgContainer src={mediaCover}/>
-                </a>
-                <StatsContainer>
-                Similarity: {(data.similarity * 100).toFixed(1)}%
-                    <VideoContainer>
-                        <FrameVideo autoPlay={true} muted loop controls>
-                            <source src={data.video} type="video/mp4"/>
-                        </FrameVideo>
-                    </VideoContainer>
-                Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}
-                </StatsContainer>
-            </AnimeContainer>)}
         </>
     )
 }

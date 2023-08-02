@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const ListResultContainer = styled.div`
     width: 100%;
-    height: 90px;
+    height: ${props => props.expand ? "500px" : "90px"};
     font-size: 25px;
     color: white;
     color: white;
@@ -11,6 +11,8 @@ export const ListResultContainer = styled.div`
     border: 2px solid white;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    row-gap: 40px;
     align-items: center;
     text-align: center;
     margin: 10px;

@@ -1,8 +1,8 @@
 import { styled } from "styled-components"
 
 export const FormFileUpload = styled.form`
-    height: 16rem;
-    width: 28rem;
+    width: 640px;
+    height: 320px;
     max-width: 100%;
     text-align: center;
 `
@@ -17,7 +17,8 @@ export const LabelFileUpload = styled.label`
     align-items: center;
     justify-content: center;
     border-width: 5px;
-    border-radius: 1rem;
+    font-size: 20px;
+    border-radius: 25px;
     border-style: dashed;
     border-color: ${(props) => (props.hashover ? "gray" : "#cbd5e1")};
     background-color: ${(props) => (props.hashover ? " #d6d8ea" : "#f8fafc")};
@@ -31,19 +32,8 @@ export const LabelFileUpload = styled.label`
 export const UploadButton = styled.button`
     cursor: pointer;
     padding: 0.25rem;
-    font-size: 1rem;
+    font-size: 20px;
     border: none;
     color: red;
     background-color: transparent;
-`
-
-export const DragFileElement = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
 `

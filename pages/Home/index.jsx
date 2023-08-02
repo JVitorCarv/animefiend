@@ -1,19 +1,13 @@
 import * as s from "./styles"
 import { useEffect, useState } from "react"
-import UploadBox from "../../components/UploadBox"
-import PictureBox from "../../components/PictureBox"
 import ListResult from "../../components/ListResult"
 import mockData from "../../mockData.json" /* remove later */
 import Spinner from "../../components/Spinner"
+import VersatileUploadBox from "../../components/VersatileUploadBox"
 
 const Home = () => {
-    const [picture, setPicture] = useState()
     const [file, setFile] = useState()
-    const handleFileSelected = (file) => {
-        const pictureUrl = URL.createObjectURL(file)
-        setFile(file)
-        setPicture(pictureUrl)
-    }
+    const [picture, setPicture] = useState()
 
     const [spinnerEnabled, setSpinnerEnabled] = useState(false)
     const [animeData, setAnimeData] = useState()
@@ -31,20 +25,22 @@ const Home = () => {
             const arrayData = dataJson.result.filter(data => data.anilist.isAdult === false)
             console.log(arrayData)
             setAnimeData(arrayData)
-        }
+        } 
+        /*
+        await new Promise(p => setTimeout(p, 2000))
         setSpinnerEnabled(false)
+        setAnimeData(mockData.result) */
     }
 
     return (
         <>
             <s.FlexContainer>
                 <s.Title>ANIMEFIeND🔍</s.Title>
-                {picture && (<PictureBox onClick={fetchData} picture={picture}/>)}
+                <VersatileUploadBox fetchData={fetchData} picture={picture} setPicture={setPicture} setFile={setFile}/>
                 <s.ResultContainer>
                     {spinnerEnabled && (<Spinner />)}
                     {animeData && animeData.map(data => (<ListResult key={data} data={data} />))}
                 </s.ResultContainer>
-                <UploadBox handleFileSelected={handleFileSelected}/>
             </s.FlexContainer>
         </>
     )
