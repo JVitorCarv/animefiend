@@ -32,6 +32,7 @@ export const ResultContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 25px;
     align-items: center;
     margin: 0 100px;
     margin-bottom: 40px;

@@ -28,8 +28,8 @@ const Home = () => {
         } 
         /*
         await new Promise(p => setTimeout(p, 2000))
-        setSpinnerEnabled(false)
         setAnimeData(mockData.result) */
+        setSpinnerEnabled(false)
     }
 
     return (
