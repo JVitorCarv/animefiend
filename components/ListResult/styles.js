@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const ListResultContainer = styled.div`
     width: 100%;
-    min-height: ${props => props.expand ? "500px" : "90px"};
+    min-height: ${props => props.expand ? "400px" : "90px"};
     padding: ${props => props.expand ? "30px" : ""};
     font-size: 25px;
     color: white;

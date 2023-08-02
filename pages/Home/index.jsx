@@ -14,6 +14,7 @@ const Home = () => {
     const fetchData = async() => {
         setAnimeData()
         setSpinnerEnabled(true)
+        /*
         if (picture) {
             const formData = new FormData()
             formData.append("image", file)
@@ -25,10 +26,10 @@ const Home = () => {
             const arrayData = dataJson.result.filter(data => data.anilist.isAdult === false)
             console.log(arrayData)
             setAnimeData(arrayData)
-        } 
-        /*
+        } */
+        
         await new Promise(p => setTimeout(p, 2000))
-        setAnimeData(mockData.result) */
+        setAnimeData(mockData.result) 
         setSpinnerEnabled(false)
     }
 
