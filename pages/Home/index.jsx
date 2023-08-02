@@ -1,8 +1,9 @@
 import * as s from "./styles"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import UploadBox from "../../components/UploadBox"
 import PictureBox from "../../components/PictureBox"
-
+import ListResult from "../../components/ListResult"
+import mockData from "../../mockData.json" /* remove later */
 
 const Home = () => {
     const [picture, setPicture] = useState()
@@ -23,9 +24,10 @@ const Home = () => {
                 body: formData,
             })
             const dataJson = await data.json()
-            console.log(dataJson)
-            setAnimeData(dataJson)
-        }
+            const arrayData = dataJson.result.filter(data => data.anilist.isAdult === false)
+            console.log(arrayData)
+            setAnimeData(arrayData)
+        } 
     }
 
     return (
@@ -33,6 +35,9 @@ const Home = () => {
             <s.FlexContainer>
                 <s.Title>ANIMEFIeND🔍</s.Title>
                 {picture && (<PictureBox onClick={fetchData} picture={picture}/>)}
+                <s.ResultContainer>
+                    {animeData && animeData.map(data => (<ListResult key={data} data={data} />))}
+                </s.ResultContainer>
                 <UploadBox handleFileSelected={handleFileSelected}/>
             </s.FlexContainer>
         </>

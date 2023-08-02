@@ -26,3 +26,13 @@ export const FlexContainer = styled.div`
     flex-direction: column;
     align-items: center;
 `
+
+export const ResultContainer = styled.div`
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 100px;
+    margin-bottom: 40px;
+`

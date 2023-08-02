@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const PicturePreview = styled.div`
-    width: 500px;
-    height: 500px;
+    width: 640px;
+    height: 320px;
     background-image: ${props => `url(${props.background})`};
     background-repeat: no-repeat;
     background-position: center;
