@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const ListResultContainer = styled.div`
     width: 100%;
     height: 90px;
+    font-size: 25px;
     color: white;
     color: white;
     border-radius: 25px;
@@ -36,14 +37,16 @@ export const ListResultOverlay = styled.div`
 `
 
 export const AnimeContainer = styled.div`
+    width: 80%;
     text-shadow: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 20px;
     color: white;
-    justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
     text-align: center;
+    flex-wrap: wrap;
 `
 
 export const VideoContainer = styled.div`
@@ -63,4 +66,11 @@ export const FrameVideo = styled.video`
 export const ImgContainer = styled.img`
     background: ${(props) => `url${props.background}`};
     border-radius: 25px;
+`
+
+export const StatsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
