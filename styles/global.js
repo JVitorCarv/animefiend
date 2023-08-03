@@ -1,5 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+import { createTheme } from '@mui/material/styles';
 
+export const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFF",
+      },
+    },
+  });
 
 const GlobalStyle = createGlobalStyle`
     * {

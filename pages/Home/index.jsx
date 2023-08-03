@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ListResult from "../../components/ListResult"
 import mockData from "../../mockData.json" /* remove later */
 import Spinner from "../../components/Spinner"
+import Header from "../../components/Header"
 import VersatileUploadBox from "../../components/VersatileUploadBox"
 
 const Home = () => {
@@ -46,7 +47,7 @@ const Home = () => {
     return (
         <s.HomeContainer>
             <s.FlexContainer>
-                <s.Title>ANIMEFIeND🔍</s.Title>
+                <Header />
                 <VersatileUploadBox picture={picture} setPicture={setPicture} setFile={setFile}/>
                 {picture && <s.ResultContainer>
                     {spinnerEnabled && (<Spinner />)}
