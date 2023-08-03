@@ -10,3 +10,7 @@ export const DragFileElement = styled.div`
     bottom: 0px;
     left: 0px;
 `
+
+export const VersatileUploadContainer = styled.div`
+    margin-bottom: 30px;
+`

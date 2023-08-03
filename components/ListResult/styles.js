@@ -4,6 +4,7 @@ export const ListResultContainer = styled.div`
     width: 100%;
     min-height: ${props => props.expand ? "400px" : "90px"};
     padding: ${props => props.expand ? "30px" : ""};
+    background-color: rgba(0, 0, 0, 0.6);
     font-size: 25px;
     color: white;
     border-radius: 25px;
@@ -20,6 +21,7 @@ export const ListResultContainer = styled.div`
     font-weight: bold;
     text-shadow: 10px;
     text-shadow: 1px 1px 2px black;
+    box-shadow: 5px 10px orangered;
 
     &:hover {
         transform: scale(1.1);

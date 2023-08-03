@@ -8,9 +8,7 @@ export const PicturePreview = styled.div`
     background-position: center;
     background-size: cover;
     border-radius: 25px;
-    margin-bottom: 30px;
     border: 10 px solid red;
-    
 `
 
 export const Overlay = styled.div`

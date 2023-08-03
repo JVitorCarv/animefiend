@@ -1,7 +1,7 @@
 import * as s from "./styles"
 import { useRef, useState } from "react"
 
-const UploadBox = ({dragActive, handleDrag, handleFileSelected}) => {
+const UploadBox = ({handleDrag, handleFileSelected}) => {
     const handleChange = (e) => {
         e.preventDefault()
         if (e.target.files && e.target.files[0]) {
@@ -24,7 +24,7 @@ const UploadBox = ({dragActive, handleDrag, handleFileSelected}) => {
             onSubmit={(e) => e.preventDefault()}
         >
             <s.InputFileUpload ref={inputRef} onChange={handleChange} type="file" id="upload" />
-            <s.LabelFileUpload hashover={hover} htmlFor="upload" className={dragActive ? "drag-active" : ""}>
+            <s.LabelFileUpload hashover={hover} htmlFor="upload">
                 <div>
                     <p>Drag and drop your file here or </p>
                     <s.UploadButton onClick={onButtonClick}>Upload a file</s.UploadButton>

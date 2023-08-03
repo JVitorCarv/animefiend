@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
@@ -8,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     }
     
     body {
-        background-color: #020202;
+        background: fixed;
+        background-image: url('../src/assets/backgroundImage.png');
     }
 `
 

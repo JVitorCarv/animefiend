@@ -1,11 +1,10 @@
 import { PicturePreview, Overlay, SearchButton} from "./styles"
 import { useState } from "react"
-import SearchIcon from '@mui/icons-material/Search';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
-const PictureBox = ({onClick, picture, handleDrag}) => {
+const PictureBox = ({onClick, picture, setPicture, handleDrag}) => {
     const [onSearch, setOnSearch] = useState()
-
 
     return (
         <PicturePreview background={picture}>
@@ -14,7 +13,9 @@ const PictureBox = ({onClick, picture, handleDrag}) => {
                 onMouseLeave={() => setOnSearch(0)} 
                 onDragEnter={handleDrag}
             >
-                <SearchButton onClick={onClick} visible={onSearch}><SearchIcon fontSize="large"/></SearchButton>
+                <SearchButton onClick={onClick} visible={onSearch}>
+                    <DeleteIcon onClick={() => setPicture()} fontSize="large"/>
+                </SearchButton>
             </Overlay>
         </PicturePreview>
     )

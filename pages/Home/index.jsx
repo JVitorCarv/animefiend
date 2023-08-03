@@ -14,6 +14,7 @@ const Home = () => {
     const fetchData = async() => {
         setAnimeData()
         setSpinnerEnabled(true)
+        
         /*
         if (picture) {
             const formData = new FormData()
@@ -26,24 +27,33 @@ const Home = () => {
             const arrayData = dataJson.result.filter(data => data.anilist.isAdult === false)
             console.log(arrayData)
             setAnimeData(arrayData)
-        } */
+        }
+        */
+        
         
         await new Promise(p => setTimeout(p, 2000))
         setAnimeData(mockData.result) 
+        
         setSpinnerEnabled(false)
     }
 
+    useEffect(() => {
+        if (picture) {
+            fetchData()
+        }
+    }, [picture])
+
     return (
-        <>
+        <s.HomeContainer>
             <s.FlexContainer>
                 <s.Title>ANIMEFIeND🔍</s.Title>
-                <VersatileUploadBox fetchData={fetchData} picture={picture} setPicture={setPicture} setFile={setFile}/>
-                <s.ResultContainer>
+                <VersatileUploadBox picture={picture} setPicture={setPicture} setFile={setFile}/>
+                {picture && <s.ResultContainer>
                     {spinnerEnabled && (<Spinner />)}
                     {animeData && animeData.map(data => (<ListResult key={data} data={data} />))}
-                </s.ResultContainer>
+                </s.ResultContainer>}
             </s.FlexContainer>
-        </>
+        </s.HomeContainer>
     )
 }
 

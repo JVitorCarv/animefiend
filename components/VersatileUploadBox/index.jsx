@@ -1,10 +1,10 @@
 import PictureBox from '../PictureBox'
 import UploadBox from '../UploadBox'
 import { useState } from 'react'
-import { DragFileElement } from './styles'
+import { DragFileElement, VersatileUploadContainer } from './styles'
 
 
-const VersatileUploadBox = ({fetchData, picture, setPicture, setFile}) => {
+const VersatileUploadBox = ({picture, setPicture, setFile}) => {
     const handleFileSelected = (file) => {
         const pictureUrl = URL.createObjectURL(file)
         setFile(file)
@@ -32,15 +32,14 @@ const VersatileUploadBox = ({fetchData, picture, setPicture, setFile}) => {
     }
 
     return (
-        <>
+        <VersatileUploadContainer>
             {picture && (<PictureBox 
-                onClick={fetchData} 
                 picture={picture}
+                setPicture={setPicture}
                 handleDrag={handleDrag}
             />)}
             {!picture && <UploadBox 
                 handleDrag={handleDrag}
-                dragActive={dragActive}
                 handleFileSelected={handleFileSelected}
             />}
             {dragActive && <DragFileElement 
@@ -49,7 +48,7 @@ const VersatileUploadBox = ({fetchData, picture, setPicture, setFile}) => {
                 onDragOver={handleDrag} 
                 onDrop={handleDrop} 
             />}
-        </>
+        </VersatileUploadContainer>
     )
 }
 

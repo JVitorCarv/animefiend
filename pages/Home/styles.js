@@ -37,3 +37,9 @@ export const ResultContainer = styled.div`
     margin: 0 100px;
     margin-bottom: 40px;
 `
+
+export const HomeContainer = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+`
