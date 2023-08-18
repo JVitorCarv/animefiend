@@ -35,4 +35,5 @@ export const IconContainer = styled.div`
     width: 100px;
     height: 100px;
     font-size: 60px;
+    cursor: pointer;
 `
