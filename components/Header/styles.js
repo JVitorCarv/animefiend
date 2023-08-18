@@ -5,15 +5,32 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 360px) {
+        width: 90%;
+    }
 `
 
 export const Title = styled.h1`
     color: white;
-    font-size: 100px;
     font-family: 'Kanit', sans-serif;
     animation-iteration-count: infinite;
     animation-duration: 40s;
     animation-name: rgb_title;
+
+    @media screen and (min-width: 1025px) {
+        font-size: 100px;
+    }
+
+    @media screen and (min-width: 500px) {
+        &::after {
+            content: "🔍";
+        }
+    }
 
     @keyframes rgb_title {
         from {
@@ -36,4 +53,9 @@ export const IconContainer = styled.div`
     height: 100px;
     font-size: 60px;
     cursor: pointer;
+
+    @media screen and (max-width: 360px) {
+        font-size: 30px;
+        width: 30px;
+    }
 `

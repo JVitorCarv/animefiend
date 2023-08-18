@@ -44,8 +44,10 @@ const Home = () => {
         }
     }, [picture])
 
+
+
     return (
-        <s.HomeContainer>
+        <s.HomeContainer >
             <s.FlexContainer>
                 <Header />
                 <VersatileUploadBox picture={picture} setPicture={setPicture} setFile={setFile}/>

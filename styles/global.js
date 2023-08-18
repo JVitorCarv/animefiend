@@ -17,8 +17,9 @@ const GlobalStyle = createGlobalStyle`
     }
     
     body {
-        background: fixed;
+        background: no-repeat center fixed;
         background-image: url('../src/assets/backgroundImage.png');
+        background-size: cover;
     }
 `
 

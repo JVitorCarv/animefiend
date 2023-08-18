@@ -12,5 +12,9 @@ export const DragFileElement = styled.div`
 `
 
 export const VersatileUploadContainer = styled.div`
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 `

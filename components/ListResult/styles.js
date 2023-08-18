@@ -51,6 +51,7 @@ export const AnimeContainer = styled.div`
     justify-content: space-evenly;
     text-align: center;
     flex-wrap: wrap;
+    overflow-wrap: break-word;
 `
 
 export const VideoContainer = styled.div`
@@ -61,6 +62,16 @@ export const VideoContainer = styled.div`
     height: 180px;
     border-radius: 15px;
     overflow: hidden;
+
+    @media screen and (max-width: 480px) {
+        width: 240px;
+        height: 135px;
+    }
+
+    @media screen and (max-width: 350px) {
+        width: 160px;
+        height: 90px;
+    }
 `
 
 export const FrameVideo = styled.video`
@@ -70,6 +81,10 @@ export const FrameVideo = styled.video`
 export const ImgContainer = styled.img`
     background: ${(props) => `url${props.background}`};
     border-radius: 25px;
+
+    @media screen and (max-width: 340px) {
+        width: 150px;
+    }
 `
 
 export const StatsContainer = styled.div`
@@ -77,4 +92,7 @@ export const StatsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-overflow: clip;
+    min-width: 0; /* this is used to make word-break work */
+    word-break: break-word;
 `

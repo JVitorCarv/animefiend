@@ -31,6 +31,8 @@ export const Instructions = styled.div`
     padding: 25px;
     display: flex;
     gap: 10px;
+    max-width: 90%;
+    text-align: center;
 `
 
 export const ClosePopup = styled.p`

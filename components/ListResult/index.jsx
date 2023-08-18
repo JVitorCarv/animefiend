@@ -62,13 +62,13 @@ const ListResult = ({data}) => {
                         <ImgContainer src={mediaCover}/>
                     </a>
                     <StatsContainer>
-                    Similarity: {(data.similarity * 100).toFixed(1)}%
+                    <p>Similarity: {(data.similarity * 100).toFixed(1)}%</p>
                         <VideoContainer>
                             <FrameVideo autoPlay={true} muted loop controls>
                                 <source src={data.video} type="video/mp4"/>
                             </FrameVideo>
                         </VideoContainer>
-                    Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}
+                    <p>Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}</p>
                     </StatsContainer>
                 </AnimeContainer>)}
             </ListResultContainer>
