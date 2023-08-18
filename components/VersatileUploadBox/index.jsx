@@ -5,13 +5,14 @@ import { DragFileElement, VersatileUploadContainer } from './styles'
 
 
 const VersatileUploadBox = ({picture, setPicture, setFile}) => {
+    const [dragActive, setDragActive] = useState(false)
+    
     const handleFileSelected = (file) => {
         const pictureUrl = URL.createObjectURL(file)
         setFile(file)
         setPicture(pictureUrl)
     }
 
-    const [dragActive, setDragActive] = useState(false)
     const handleDrag = (e) => {
         e.preventDefault();
         e.stopPropagation();

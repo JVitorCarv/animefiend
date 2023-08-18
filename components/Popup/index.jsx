@@ -3,6 +3,7 @@ import { BackgroundOverlay, ClosePopup, Instructions, InstructionsContainer } fr
 
 const Popup = ({ setPopup, toggleScroll }) => {
     const instructionsRef = useRef(null)
+    
     const handleClick = () => {
         setPopup(false)
         toggleScroll(true)

@@ -1,22 +1,13 @@
 import { Loader } from './styles'
 
 const Spinner = () => {
-  return (
-    <Loader>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </Loader>
-  )
+  const numberOfDivs = 12; 
+
+  const divElements = Array.from({ length: numberOfDivs }, (_, index) => (
+    <div key={index}></div>
+  ));
+
+  return <Loader>{divElements}</Loader>
 }
 
 export default Spinner

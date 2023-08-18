@@ -7,14 +7,17 @@ import Popup from "../Popup";
 
 const Header = () => {
     const [popup, setPopup] = useState(false)
+
     const toggleScroll = (value) => {
         const overflowValue = value ?  'auto' : 'hidden'
         document.body.style.overflow = overflowValue
     }
+
     const handleClick = () => {
         setPopup(true)
         toggleScroll(false)
     }
+    
     return (
         <HeaderContainer>
             <a href="https://github.com/JVitorCarv/animefiend" target="_blank" rel="noreferrer">

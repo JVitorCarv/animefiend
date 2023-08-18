@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { AnimeContainer, FrameVideo, ImgContainer, ListResultContainer, StatsContainer, VideoContainer } from './styles'
+import axios from 'axios'
 
-const ListResult = ({data}) => {
+const ListResult = ({ data }) => {
+    const [mediaCover, setMediaCover] = useState()
     const [open, setOpen] = useState()
 
     const coverQuery = `
@@ -19,36 +21,34 @@ const ListResult = ({data}) => {
         }
       }
       `
-    
-    const [mediaCover, setMediaCover] = useState()
+
     const fetchData = async () => {
-        console.log("fetch")
-        var variables = {
+        const variables = {
             id: data.anilist.id,
         };
-        
-        var url = 'https://graphql.anilist.co',
-            options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                body: JSON.stringify({
-                    query: coverQuery,
-                    variables: variables
-                })
-            };
-        
-        const response = await fetch(url, options)
-        const responseJson = await response.json()
-        setMediaCover(responseJson.data.Page.media[0].coverImage.large)
+
+        const url = 'https://graphql.anilist.co';
+        const options = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+        };
+
+        try {
+            const response = await axios.post(url, {
+                query: coverQuery,
+                variables: variables,
+            }, options);
+
+            setMediaCover(response.data.data.Page.media[0].coverImage.large)
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
     }
 
-    const convertToDate = (num) => {
-        return new Date(num * 1000).toISOString().slice(11, 19);
-    }
-    
+    const convertToDate = (num) => new Date(num * 1000).toISOString().slice(11, 19)
+
     useEffect(() => {
         fetchData()
     }, [open])
@@ -59,16 +59,16 @@ const ListResult = ({data}) => {
                 {data.anilist.title.romaji}
                 {open && (<AnimeContainer>
                     <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">
-                        <ImgContainer src={mediaCover}/>
+                        <ImgContainer src={mediaCover} />
                     </a>
                     <StatsContainer>
-                    <p>Similarity: {(data.similarity * 100).toFixed(1)}%</p>
+                        <p>Similarity: {(data.similarity * 100).toFixed(1)}%</p>
                         <VideoContainer>
                             <FrameVideo autoPlay={true} muted loop controls>
-                                <source src={data.video} type="video/mp4"/>
+                                <source src={data.video} type="video/mp4" />
                             </FrameVideo>
                         </VideoContainer>
-                    <p>Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}</p>
+                        <p>Episode {data.episode} from {convertToDate(data.from)} to {convertToDate(data.to)}</p>
                     </StatsContainer>
                 </AnimeContainer>)}
             </ListResultContainer>

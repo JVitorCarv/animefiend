@@ -2,6 +2,9 @@ import * as s from "./styles"
 import { useRef, useState } from "react"
 
 const UploadBox = ({handleDrag, handleFileSelected}) => {
+    const [hover, setHover] = useState(0)
+    const inputRef = useRef()
+    
     const handleChange = (e) => {
         e.preventDefault()
         if (e.target.files && e.target.files[0]) {
@@ -9,12 +12,7 @@ const UploadBox = ({handleDrag, handleFileSelected}) => {
         }
     }
     
-    const inputRef = useRef()
-    const onButtonClick = () => {
-        inputRef.current.click()
-    }
-
-    const [hover, setHover] = useState(0)
+    const onButtonClick = () => inputRef.current.click()
 
     return (
         <s.FormFileUpload 
