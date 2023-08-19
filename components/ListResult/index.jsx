@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { AnimeContainer, FrameVideo, ImgContainer, ListResultContainer, StatsContainer, VideoContainer } from './styles'
 import axios from 'axios'
 
-const ListResult = ({ data }) => {
+const ListResult = ({ data, refresh }) => {
     const [mediaCover, setMediaCover] = useState()
-    const [open, setOpen] = useState()
+    const [open, setOpen] = useState(false)
 
     const coverQuery = `
     query ($id: Int, $page: Int) {
@@ -49,13 +49,18 @@ const ListResult = ({ data }) => {
 
     const convertToDate = (num) => new Date(num * 1000).toISOString().slice(11, 19)
 
+    const handleClick = () => {
+        setOpen(prev => !prev)
+        !mediaCover && fetchData()
+    }
+
     useEffect(() => {
-        fetchData()
-    }, [open])
+        setMediaCover(false)
+    }, [refresh])
 
     return (
         <>
-            <ListResultContainer expand={open} onClick={() => setOpen(!open)}>
+            <ListResultContainer expand={open} onClick={handleClick}>
                 {data.anilist.title.romaji}
                 {open && (<AnimeContainer>
                     <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">

@@ -9,11 +9,12 @@ import axios from "axios"
 const Home = () => {
     const [file, setFile] = useState()
     const [picture, setPicture] = useState()
-    const [spinnerEnabled, setSpinnerEnabled] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [animeData, setAnimeData] = useState()
 
     const fetchData = async () => {
-        setSpinnerEnabled(true);
+        setAnimeData([])
+        setLoading(true);
         if (picture) {
             const formData = new FormData();
             formData.append('image', file);
@@ -32,7 +33,7 @@ const Home = () => {
                 console.error('Error fetching data:', error);
             }
         }
-        setSpinnerEnabled(false);
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -47,8 +48,8 @@ const Home = () => {
                 <Header />
                 <VersatileUploadBox picture={picture} setPicture={setPicture} setFile={setFile} />
                 {picture && <s.ResultContainer>
-                    {spinnerEnabled && (<Spinner />)}
-                    {animeData && animeData.map(data => (<ListResult key={data} data={data} />))}
+                    {loading && (<Spinner />)}
+                    {animeData && animeData.map(data => (<ListResult refresh={loading} key={data} data={data} />))}
                 </s.ResultContainer>}
             </s.FlexContainer>
         </s.HomeContainer>
