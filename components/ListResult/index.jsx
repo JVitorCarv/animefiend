@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimeContainer, FrameVideo, ImgContainer, ListResultContainer, StatsContainer, VideoContainer } from './styles'
+import Spinner from "../Spinner"
 import axios from 'axios'
 
 const ListResult = ({ data, refresh }) => {
@@ -64,7 +65,7 @@ const ListResult = ({ data, refresh }) => {
                 {data.anilist.title.romaji}
                 {open && (<AnimeContainer>
                     <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">
-                        <ImgContainer src={mediaCover} />
+                        {mediaCover ? (<ImgContainer src={mediaCover} />) : (<Spinner />)}
                     </a>
                     <StatsContainer>
                         <p>Similarity: {(data.similarity * 100).toFixed(1)}%</p>

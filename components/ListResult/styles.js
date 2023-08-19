@@ -81,7 +81,6 @@ export const FrameVideo = styled.video`
 export const ImgContainer = styled.img`
     background: ${(props) => `url${props.background}`};
     border-radius: 25px;
-
     @media screen and (max-width: 340px) {
         width: 150px;
     }

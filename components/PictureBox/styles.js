@@ -3,12 +3,13 @@ import { styled } from "styled-components";
 export const PicturePreview = styled.div`
     width: 640px;
     height: 320px;
+    background-color: rgba(0, 0, 0, 0.5);
     background-image: ${props => `url(${props.background})`};
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     border-radius: 25px;
-    border: 10 px solid red;
+    border: 2px solid white;
 `
 
 export const Overlay = styled.div`
