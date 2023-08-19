@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     
     body {
         background: no-repeat center fixed;
-        background-image: url('../src/assets/backgroundImage.png');
+        background-image: url('backgroundImage.png');
         background-size: cover;
     }
 `
