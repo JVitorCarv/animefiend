@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/animefiend/" element={<Home />} />
+        <Route path="/animefiend/" element={<Home />} />
       </Routes>
     </Router>
   )
