@@ -28,7 +28,7 @@ const Header = () => {
                     />
                 </IconContainer>
             </a>
-            <Title>ANIMEFIeND</Title>
+            <Title>ANiTHING</Title>
             {popup && (<Popup setPopup={setPopup} toggleScroll={toggleScroll} />)}
             <IconContainer>
                 <HelpOutlineIcon 
