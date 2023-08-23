@@ -49,7 +49,8 @@ const Home = () => {
                 <VersatileUploadBox picture={picture} setPicture={setPicture} setFile={setFile} />
                 {picture && <s.ResultContainer>
                     {loading && (<Spinner />)}
-                    {animeData && animeData.map(data => (<ListResult refresh={loading} key={data} data={data} />))}
+                    {animeData && animeData.length == 0 && loading == false && (<s.NoResults>No results were found</s.NoResults>)}
+                    {animeData && animeData.map((data, i) => (<ListResult refresh={loading} key={i} data={data} />))}
                 </s.ResultContainer>}
             </s.FlexContainer>
         </s.HomeContainer>

@@ -22,7 +22,7 @@ const UploadBox = ({handleDrag, handleFileSelected}) => {
             onSubmit={(e) => e.preventDefault()}
         >
             <s.InputFileUpload ref={inputRef} onChange={handleChange} type="file" id="upload" />
-            <s.LabelFileUpload hashover={hover} htmlFor="upload">
+            <s.LabelFileUpload $hashover={hover} htmlFor="upload">
                 <div>
                     <p>Drag and drop your file here or </p>
                     <s.UploadButton onClick={onButtonClick}>Upload a file</s.UploadButton>

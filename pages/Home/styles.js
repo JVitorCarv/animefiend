@@ -38,3 +38,8 @@ export const HomeContainer = styled.div`
         min-height: 100vh;
     }
 `
+
+export const NoResults = styled.h2`
+    color: white;
+    text-align: center;
+`

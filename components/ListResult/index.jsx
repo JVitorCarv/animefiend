@@ -61,7 +61,7 @@ const ListResult = ({ data, refresh }) => {
 
     return (
         <>
-            <ListResultContainer expand={open} onClick={handleClick}>
+            <ListResultContainer $expanded={open.toString()} onClick={handleClick}>
                 {data.anilist.title.romaji}
                 {open && (<AnimeContainer>
                     <a href={`https://anilist.co/anime/${data.anilist.id}`} target="_blank" rel="noreferrer">

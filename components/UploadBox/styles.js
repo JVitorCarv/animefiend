@@ -20,8 +20,8 @@ export const LabelFileUpload = styled.label`
     font-size: 20px;
     border-radius: 25px;
     border-style: dashed;
-    border-color: ${(props) => (props.hashover ? "gray" : "#cbd5e1")};
-    background-color: ${(props) => (props.hashover ? " #d6d8ea" : "#f8fafc")};
+    border-color: ${(props) => (props.$hashover ? "gray" : "#cbd5e1")};
+    background-color: ${(props) => (props.$hashover ? " #d6d8ea" : "#f8fafc")};
     transition: 0.5s ease-in-out;
 
     &:hover{

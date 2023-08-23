@@ -20,7 +20,7 @@ const Header = () => {
     
     return (
         <HeaderContainer>
-            <a href="https://github.com/JVitorCarv/animefiend" target="_blank" rel="noreferrer">
+            <a href="https://github.com/JVitorCarv/anithing" target="_blank" rel="noreferrer">
                 <IconContainer>
                     <GitHubIcon 
                         style={{ color: theme.palette.primary.main }} 

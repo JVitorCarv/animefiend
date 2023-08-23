@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 
 export const ListResultContainer = styled.div`
     width: 100%;
-    min-height: ${props => props.expand ? "400px" : "90px"};
-    padding: ${props => props.expand ? "30px" : ""};
+    min-height: ${props => props.$expanded == 'true' ? "400px" : "90px"};
+    padding: ${props => props.$expanded == 'true' ? "30px" : ""};
     background-color: rgba(0, 0, 0, 0.6);
     font-size: 25px;
     color: white;

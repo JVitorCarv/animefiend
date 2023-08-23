@@ -7,13 +7,13 @@ const PictureBox = ({onClick, picture, setPicture, handleDrag}) => {
     const [onSearch, setOnSearch] = useState()
 
     return (
-        <PicturePreview background={picture}>
+        <PicturePreview $background={picture}>
             <Overlay 
                 onMouseEnter={() => setOnSearch(1)} 
                 onMouseLeave={() => setOnSearch(0)} 
                 onDragEnter={handleDrag}
             >
-                <SearchButton onClick={onClick} visible={onSearch}>
+                <SearchButton onClick={onClick} $visible={onSearch}>
                     <DeleteIcon onClick={() => setPicture()} fontSize="large"/>
                 </SearchButton>
             </Overlay>

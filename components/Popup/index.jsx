@@ -30,7 +30,7 @@ const Popup = ({ setPopup, toggleScroll }) => {
             <InstructionsContainer>
                 <Instructions ref={instructionsRef}>
                     <p>Drag and drop an anime frame or upload it from your files.
-                        ANIMEFIeND will search for the image and tell you from what anime
+                        ANiTHING will search for the image and tell you from what anime
                         it is, as well as the episode and its timestamp!</p>
                     <ClosePopup onClick={handleClick}>✖</ClosePopup>
                 </Instructions>

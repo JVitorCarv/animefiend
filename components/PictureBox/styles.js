@@ -4,7 +4,7 @@ export const PicturePreview = styled.div`
     width: 640px;
     height: 320px;
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: ${props => `url(${props.background})`};
+    background-image: ${props => `url(${props.$background})`};
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -33,7 +33,7 @@ export const SearchButton = styled.button`
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    opacity: ${(props) => (props.visible ? 1 : 0)};
+    opacity: ${(props) => (props.$visible ? 1 : 0)};
     transition: 0.5s ease-in-out;
 
     &:hover {
