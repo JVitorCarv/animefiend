@@ -1,8 +1,6 @@
-# React + Vite
+# ANIMEFIeND 🔎
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Drag and drop an anime frame or upload it from your files. ANIMEFIeND will search for the image and tell you from what anime it is, as well as the episode and its timestamp!
 
-Currently, two official plugins are available:
+![image](https://github.com/JVitorCarv/animefiend/assets/89556957/03320bec-e87e-4851-ba93-e00d27c9270d)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
